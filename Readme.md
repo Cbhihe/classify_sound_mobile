@@ -6,12 +6,15 @@ Source:
 https://codelabs.developers.google.com/codelabs/tensorflowjs-audio-codelab/index.html#0
 
 All that follows can be done either on a laptop or on a smartphone and was
-adapated from Google codelab.
+adapted from Google codelab.
 
-You will use transfer learning to make a model that classifies short sounds
-with relatively little training data. You will be using a pre-trained model
-for speech command recognition. You will train a new model on top of this
-model to recognize your own custom sound classes.  We test the transferred model
+We use transfer learning to make a model that classifies short sounds
+with relatively little training data. The pre-trained model for speech cmd
+recognition is based on the TensorFlow Speech Commands Dataset. For more
+information about it and the underlying Deep NN model, visit:
+    https://www.tensorflow.org/tutorials/sequences/audio_recognition
+We train a new model on top of the pretrained model to recognize your own
+custom sound classes.  We test the transferred model
 by making sounds and using it to control a slider in the browser.
 
 The Speech Command Recognizer is a JavaScript module that enables recognition
@@ -23,13 +26,12 @@ vocabulary. The default vocabulary includes the following words:
  "go", "stop",
  "yes", "no",
 as well as the additional categories of "unknown word" and "background noise".
-
 It uses the web browser's WebAudio API. It is built on top of TensorFlow.js
 and can perform inference and transfer learning entirely in the browser,
-using WebGL GPU acceleration.
+optionally using WebGL GPU acceleration.
 
-First, we load and run a pre-trained model that can recognize 20 speech
-commands. Then using your microphone, you will build and train a simple neural
+First, load and run a pre-trained model that can recognize 20 speech
+commands. Then using the microphone, build and train a simple neural
 network that recognizes your sounds and makes the slider go left or right.
 
 ## Objective
@@ -44,13 +46,11 @@ network that recognizes your sounds and makes the slider go left or right.
  - about the theory,  read the article by P. Warden (2018): "Speech commands: A
    dataset for limited-vocabulary speech recognition"s, located at:
         https://arxiv.org/pdf/1804.03209.pdf
- - about the TensorFlow Speech Commands Dataset, used to train the under-
-   lying deep NN, visit:
-        https://www.tensorflow.org/tutorials/sequences/audio_recognition
  - consider watching a video (as a refresher) by 3blue1brown ats:
         https://www.youtube.com/watch?v=aircAruvnKk
    or this other video on Deep Learning in Javascript by Ashi Krishnan, at:
         https://www.youtube.com/watch?v=SV-cgdobtTA
+
 ## Trials:
 To run the webpage, simply open 'index.html' in a web browser. If you use
 the cloud console, simply refresh the preview page. If you work from a
